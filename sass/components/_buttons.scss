@@ -1,0 +1,84 @@
+.inline-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--primary);
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  &:hover {
+    color: var(--grey-dark-1);
+  }
+  &:focus {
+    animation: upscale 1s infinite;
+    outline: none;
+  }
+  @include respond(phone) {
+    font-size: 1.2rem;
+  }
+}
+
+.btn {
+  border: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  @include respond(xs-phone) {
+    font-size: 1.2rem;
+  }
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+
+  & > * {
+    transition: all 0.2s;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+  &__visible {
+    padding: 2rem 7.5rem;
+    @include respond(phone) {
+      padding: 1.5rem 6rem;
+    }
+    @include respond(xs-phone) {
+      padding: 1.5rem 4rem;
+    }
+  }
+  &__invisible {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 2rem 0;
+    @include respond(phone) {
+      padding: 1.5rem 0;
+    }
+  }
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--primary-light),
+      var(--primary-dark)
+    );
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:focus {
+    animation: upscale 1s infinite;
+  }
+  @include respond(phone) {
+    font-size: 1.2rem;
+  }
+}

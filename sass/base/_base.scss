@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  @include respond(normal) {
+    font-size: 50%;
+  }
+  @include respond(xs-phone) {
+    font-size: 37.5%;
+  }
+}
+body {
+  background: linear-gradient(
+      to right bottom,
+      var(--primary-light),
+      var(--primary-dark)
+    )
+    no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  box-sizing: border-box;
+  ::selection {
+    background: var(--primary-light);
+    color: var(--grey-light-1);
+  }
+}
